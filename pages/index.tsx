@@ -81,6 +81,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <h1 className="covid-tracker">Covid Tracker</h1>
         <div className="container">
           <div className="select-box">
             <select onChange={handleSort}>
@@ -90,7 +91,7 @@ export default function Home() {
               <option value="TotalDeaths_DESC">Deaths DESC</option>
               <option value="TotalDeaths_ASC">Deaths ASC</option>
               <option value="TotalRecovered_DESC">Recovered DESC</option>
-              <option value="TotalRecovered_DESC">Recovered ASC</option>
+              <option value="TotalRecovered_ASC">Recovered ASC</option>
             </select>
           </div>
         </div>
@@ -125,7 +126,7 @@ export default function Home() {
           </>
         )}
 
-        {isModal && !countryData.isLoading  && (
+        {isModal && !countryData.isLoading && (
           <CountryModal country={countryData.data} removeModal={removeModal} />
         )}
       </main>

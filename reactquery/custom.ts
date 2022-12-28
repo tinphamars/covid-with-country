@@ -6,8 +6,6 @@ export const CustomApi = async () => {
   });
 };
 
-
-
 export const CustomApi2 = async () => {
   return axios.create({
     baseURL: "https://restcountries.com/v3.1/alpha",

@@ -10,7 +10,7 @@ export default function CountryModal({ removeModal, country }: any) {
     <>
       <div className="modal">
         <div className="modal-content">
-          <div>
+          <div className="flag-left">
             <span className="close" onClick={hideModal}>
               &times;
             </span>

@@ -282,6 +282,7 @@ select {
 .flag-country {
   border-radius: 10px;
   margin-top: 1rem;
+  width: 300px;
 }
 
 .country-css {
@@ -291,4 +292,14 @@ select {
 
 .country-modal {
   margin: 1rem 0;
+}
+
+.flag-left {
+  margin-right: 10px;
+}
+
+.covid-tracker {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  text-align: center;
 }
