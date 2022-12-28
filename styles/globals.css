@@ -106,6 +106,11 @@ a {
   }
 }
 
+.country-scroll {
+  height: 60vh;
+  overflow-y: auto;
+}
+
 .country {
   display: flex;
   border-radius: 10px;
@@ -230,6 +235,7 @@ select {
   align-items: center;
   border-radius: 30px;
   margin-top: 30px;
+  flex-direction: column;
 }
 
 .modal {
@@ -244,6 +250,7 @@ select {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  animation: moveUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
 /* Modal Content */
@@ -253,11 +260,13 @@ select {
   padding: 20px;
   border: 1px solid #888;
   width: 50vw;
+  max-width: 600px;
   border-radius: 20px;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  animation: slideUpLarge .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
 /* The Close Button */
@@ -282,7 +291,7 @@ select {
 .flag-country {
   border-radius: 10px;
   margin-top: 1rem;
-  width: 300px;
+  width: 200px;
 }
 
 .country-css {
@@ -294,12 +303,31 @@ select {
   margin: 1rem 0;
 }
 
-.flag-left {
-  margin-right: 10px;
+.covid-tracker {
+  margin: 2rem 0;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
 }
 
-.covid-tracker {
-  font-size: 2.5rem;
-  margin: 2rem 0;
-  text-align: center;
+.flag-left {
+  margin-right: 1rem;
+}
+
+@keyframes moveUp {
+  0% {
+    transform:translateY(150px);
+  }
+  100% {
+    transform:translateY(0);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform:translateY(0px);
+  }
+  100% {
+    transform:translateY(150px);
+  }
 }

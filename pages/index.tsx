@@ -101,31 +101,34 @@ export default function Home() {
           <div className="total-deaths-title">Deaths</div>
           <div className="total-recovered-title">Recovered</div>
         </div>
-
-        {!countries.isLoading && data.length ? (
-          data.map((item: any) => {
-            return (
-              <div className="country" key={item.ID}>
-                <div
-                  className="country-name"
-                  onClick={(e) => handleCountry(e, item.CountryCode)}
-                >
-                  {item.Country}
+        <div className="country-scroll">
+          {!countries.isLoading && data.length ? (
+            data.map((item: any) => {
+              return (
+                <div className="country" key={item.ID}>
+                  <div
+                    className="country-name"
+                    onClick={(e) => handleCountry(e, item.CountryCode)}
+                  >
+                    {item.Country}
+                  </div>
+                  <div className="confirmed">{item.TotalConfirmed}</div>
+                  <div className="total-deaths">{item.TotalDeaths}</div>
+                  <div className="total-recovered">{item.TotalRecovered}</div>
                 </div>
-                <div className="confirmed">{item.TotalConfirmed}</div>
-                <div className="total-deaths">{item.TotalDeaths}</div>
-                <div className="total-recovered">{item.TotalRecovered}</div>
+              );
+            })
+          ) : (
+            <>
+              <div className="data-empty">
+                <h3>Data is empty !</h3>
+                <div>
+                  <h5>api hạn chế truy cập nên lúc có dự liệu lúc không.</h5>
+                </div>
               </div>
-            );
-          })
-        ) : (
-          <>
-            <div className="data-empty">
-              <h3>Data is empty !</h3>
-            </div>
-          </>
-        )}
-
+            </>
+          )}
+        </div>
         {isModal && !countryData.isLoading && (
           <CountryModal country={countryData.data} removeModal={removeModal} />
         )}

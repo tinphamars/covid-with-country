@@ -21,7 +21,11 @@ export default function CountryModal({ removeModal, country }: any) {
             </div>
             <div className="country-css">
               <span>Capital:</span>
-              <h5>{country[0]?.capital[0]}</h5>
+              {country[0].capital ? (
+                <h5>{country[0]?.capital[0]}</h5>
+              ) : (
+                <h5>No result</h5>
+              )}
             </div>
             <div className="country-css">
               <span>Population:</span>
